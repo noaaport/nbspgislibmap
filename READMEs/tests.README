@@ -1,0 +1,28 @@
+#
+# $Id$
+#
+
+1) To prepare
+
+  cd compile
+  make tests
+
+2) To run
+
+  cd compile/pkg/usr/local/tests
+
+  ./test1-bref jua n0r
+  ./test1-bref kkk nnn
+
+  	      kkk = any site
+	      nnn = n?(r|q|z)  (bref)
+
+   ./test2-bref n0r   (or n0q, ...)
+   ./test3-bref n0r   (or ...)
+
+3) To clean
+
+   cd compile
+   make distclean
+
+4) See README

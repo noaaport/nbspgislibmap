@@ -1,0 +1,16 @@
+Fri Aug 12 21:59:29 AST 2011 -
+
+In a radar map generation
+
+   shp2img -m n0q.map -o n0q.png
+
+if the phrase
+
+   [level] == nn
+
+is (by mistake) written as
+
+   \level]
+
+the program exits with a segmentation fault.
+ 

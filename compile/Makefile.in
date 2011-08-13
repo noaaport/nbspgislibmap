@@ -1,0 +1,68 @@
+#
+# $Id$
+#
+
+# These are for manipulation by packaging tools
+PKGBUILDDIR = pkg
+PREFIX = usr/local
+
+DESTDIR = ${PKGBUILDDIR}/${PREFIX}
+BINDIR = ${DESTDIR}/bin
+SHAREDIR = ${DESTDIR}/share
+DOCDIR = ${DESTDIR}/share/doc
+
+PKG_BINDIR = ${BINDIR}
+PKG_SHAREDIR = ${SHAREDIR}/nbspgislib
+PKG_MAPSDIR = ${PKG_SHAREDIR}/maps
+PKG_TCLLIBDIR = ${PKG_SHAREDIR}/tcl
+PKG_DOCDIR = ${DOCDIR}/nbspgislib
+
+PKG_DIRS = ${PKG_BINDIR} ${PKG_SHAREDIR} ${PKG_MAPSDIR} \
+	${PKG_TCLLIBDIR} ${PKG_DOCDIR}
+
+SRC_TCLDIR = src/tcl
+SRC_MAPSDIR = src/maps
+SRC_NBSPGISLIB = src/nbspgislib/compile
+SRC_TESTSDIR = src/tests
+SRC_DATADIR = ../ext
+
+BINFILES = \
+	${SRC_TCLDIR}/nbspglmap \
+	${SRC_TCLDIR}/nbspglradmap
+
+TCLLIBFILES = \
+	${SRC_TCLDIR}/radstations.tcl
+
+MAPSFILES = \
+	${SRC_MAPSDIR}/bref.tmap \
+	${SRC_MAPSDIR}/bref_1.tmap \
+	${SRC_MAPSDIR}/bref_3.tmap \
+	${SRC_MAPSDIR}/bref_5.tmap
+
+GEODATAFILE = ${SRC_DATADIR}/geodata-mapfonts.tgz
+
+TCLSH = %TCLSH%
+
+all:
+	cd ${SRC_TCLDIR}; ${MAKE} TCLSH=${TCLSH}
+	cd ${SRC_NBSPGISLIB}; ${MAKE}
+
+install: all
+	PKGBUILDDIR=`pwd`/${PKGBUILDDIR}; \
+		cd ${SRC_NBSPGISLIB}; \
+		${MAKE} PKGBUILDDIR=$${PKGBUILDDIR} install
+	install -d ${PKG_DIRS}
+	install -m 0755 ${BINFILES} ${PKG_BINDIR}
+	install -m 0644 ${TCLLIBFILES} ${PKG_TCLLIBDIR}
+	install -m 0644 ${MAPSFILES} ${PKG_MAPSDIR}
+	tar -xzf ${GEODATAFILE} -C ${PKG_SHAREDIR}
+
+tests: install
+	cp -R ${SRC_TESTSDIR} ${DESTDIR}
+
+clean:
+	rm -rf *~ ${PKGBUILDDIR}
+
+distclean: clean
+	rm -rf src
+	rm -f Makefile

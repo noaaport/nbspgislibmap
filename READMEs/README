@@ -1,0 +1,73 @@
+#
+# $Id$
+#
+
+The most basic usage of this package is
+
+  nbspglradmap <nids file>
+
+for example 
+
+  nbspglradmap n0rjua_20110808_1948.nids
+
+The file name must end in ".nids" and start with the "awips" header,
+such as n0rjua in this case.
+
+The nbspglradmap (tcl) script will then do the following behind
+the scenes. It will exec the nbspgislib programs to convert the
+nids file data to shapefile format, and it will then
+exec another (tcl) script "nbspglmap". The latter takes as input
+the shapefiles and a mapserver "map script" to create the radar image.
+
+The "nbspglmap" script can be used independently and it has many
+options to control its behaviour, and in particular it can be used to
+create mosaics of several input shapefiles files (e.g. radar mosaics of
+a given region covering several sites), as well as other data (e.g. sat)
+types.
+
+Thus, in summary, "nbspglmap" is a low level interface while
+"nbspglradmap" is a higher level interface for the radar files.
+
+For the interested reader, the "map script template" for the bref
+radar images is in the subdirectory "share/nbspgislib/maps".
+
+This package includes some simple scripts to illustrate its basic
+usage which also serve as tests.
+
+1) testx-bref
+  
+   To prepare the test, execute
+
+   make tests
+
+   This will create a "bin" directory with the relevant tcl scripts
+   mentioned above, and a "tests" directory where the tests will be
+   carried out.
+
+   To complete the installation, the following programs from the nbspgislib
+   library must be copied (manually) to the "bin" directory
+
+   nbspunz
+   nbspradgis
+   nbspradinfo
+   nbspsatgis
+   nbspsatinfo
+
+   The bin-xxxx subdirectories have those programs already compiled
+   for some Os's.
+
+   Then, inside the "tests" directory, the test-bref script can be
+   executed thus:
+
+   ./test1-bref.sh jua n0r
+   ./test1-bref.sh jua n0q
+   ./test1-bref.sh jua n0z
+   ....
+
+   The script will download (from opennoaaport.net) the "latest" nids file
+   for the given site/type combination, and will then invoke the
+   two tcl scripts to process the nids file and generate the image.
+
+   ./test2-bref n0r
+
+    will do a n0r composite of the TX sites.
