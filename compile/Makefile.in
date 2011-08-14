@@ -31,7 +31,8 @@ BINFILES = \
 	${SRC_TCLDIR}/nbspglradmap
 
 TCLLIBFILES = \
-	${SRC_TCLDIR}/radstations.tcl
+	${SRC_TCLDIR}/radstations.tcl \
+	${SRC_TCLDIR}/pkgIndex.tcl
 
 MAPSFILES = \
 	${SRC_MAPSDIR}/bref.tmap \

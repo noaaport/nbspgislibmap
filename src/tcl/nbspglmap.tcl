@@ -20,8 +20,6 @@
 package require fileutil;
 package require cmdline;
 
-append env(PATH) ":[file join [pwd] [file dirname [info script]]]";
-
 # Once and for all (assumes a "standard" dir tree)
 set basedir [file join [file dirname [info script]] ".."];
 set sharedir [file join $basedir "share" "nbspgislib"];
