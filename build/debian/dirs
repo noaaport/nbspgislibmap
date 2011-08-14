@@ -1,0 +1,16 @@
+usr/local
+usr/local/share
+usr/local/share/doc
+usr/local/share/doc/nbspgislib
+usr/local/share/nbspgislib
+usr/local/share/nbspgislib/mapfonts
+usr/local/share/nbspgislib/maps
+usr/local/share/nbspgislib/geodata
+usr/local/share/nbspgislib/geodata/c_15jl09
+usr/local/share/nbspgislib/geodata/world
+usr/local/share/nbspgislib/geodata/ci06au10
+usr/local/share/nbspgislib/geodata/w_15jl09
+usr/local/share/nbspgislib/geodata/z_01de10
+usr/local/share/nbspgislib/geodata/s_01au07
+usr/local/share/nbspgislib/tcl
+usr/local/bin
