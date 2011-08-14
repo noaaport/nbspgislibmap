@@ -48,9 +48,7 @@ all:
 	cd ${SRC_NBSPGISLIB}; ${MAKE}
 
 install: all
-	PKGBUILDDIR=`pwd`/${PKGBUILDDIR}; \
-		cd ${SRC_NBSPGISLIB}; \
-		${MAKE} PKGBUILDDIR=$${PKGBUILDDIR} install
+	cd ${SRC_NBSPGISLIB}; ${MAKE} install
 	install -d ${PKG_DIRS}
 	install -m 0755 ${BINFILES} ${PKG_BINDIR}
 	install -m 0644 ${TCLLIBFILES} ${PKG_TCLLIBDIR}

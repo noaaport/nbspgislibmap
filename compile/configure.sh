@@ -13,5 +13,9 @@ cp -R ../src .
 
 tar -xzf ../ext/nbspgislib-${nbspgislibversion}.tgz -C src
 mv src/nbspgislib-${nbspgislibversion} src/nbspgislib
+
 cd src/nbspgislib/compile
 ./configure.sh
+cp Makefile Makefile.orig
+sed -e "/^PKGBUILDDIR =.*\$/s||PKGBUILDDIR = ../../../pkg|" \
+    Makefile.orig > Makefile
