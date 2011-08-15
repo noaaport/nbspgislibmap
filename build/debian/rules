@@ -25,11 +25,12 @@ clean: stage.configure
 	dh_testdir
 	dh_testroot
 	cd compile; ${MAKE} clean
+	rm -f stage.*
 	dh_clean
 
 distclean: clean
 	cd compile; ${MAKE} distclean
-	rm -rf stage.* debian
+	rm -rf debian
 
 install: stage.build
 	dh_testdir

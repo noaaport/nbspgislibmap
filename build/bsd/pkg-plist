@@ -1,9 +1,9 @@
 @owner root
 @group wheel
-share/doc/nbspgislib/examples/test1-bref.sh
-share/doc/nbspgislib/examples/test2-bref.sh
-share/doc/nbspgislib/examples/test3-bref.sh
-share/doc/nbspgislib/examples/test4-bref.sh
+share/doc/nbspgislib/examples/ex1-bref.sh
+share/doc/nbspgislib/examples/ex2-bref.sh
+share/doc/nbspgislib/examples/ex3-bref.sh
+share/doc/nbspgislib/examples/ex4-bref.sh
 share/nbspgislib/mapfonts/VeraSe.ttf
 share/nbspgislib/mapfonts/VeraSeBd.ttf
 share/nbspgislib/mapfonts/VeraBd.ttf

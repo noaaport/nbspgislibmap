@@ -26,6 +26,7 @@ SRC_MAPSDIR = src/maps
 SRC_NBSPGISLIB = src/nbspgislib/compile
 SRC_TESTSDIR = src/tests
 SRC_DATADIR = ../ext
+SRC_EXAMPLESDIR = ../doc/examples
 
 BINFILES = \
 	${SRC_TCLDIR}/nbspglmap \
@@ -43,10 +44,10 @@ MAPSFILES = \
 
 GEODATAFILE = ${SRC_DATADIR}/geodata-mapfonts.tgz
 
-EXAMPLESFILES = ${SRC_TESTSDIR}/test1-bref.sh \
-	${SRC_TESTSDIR}/test2-bref.sh \
-	${SRC_TESTSDIR}/test3-bref.sh \
-	${SRC_TESTSDIR}/test4-bref.sh
+EXAMPLESFILES = ${SRC_EXAMPLESDIR}/ex1-bref.sh \
+	${SRC_EXAMPLESDIR}/ex2-bref.sh \
+	${SRC_EXAMPLESDIR}/ex3-bref.sh \
+	${SRC_EXAMPLESDIR}/ex4-bref.sh
 
 TCLSH = %TCLSH%
 
