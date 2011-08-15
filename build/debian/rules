@@ -36,7 +36,8 @@ install: stage.build
 	dh_testdir
 	dh_testroot
 	dh_prep
-	cd compile; ${MAKE} PKGBUILDDIR=${CURDIR}/debian/${name} install
+	cd compile; \
+		${MAKE} PKGBUILDDIR=${CURDIR}/debian/${name} PREFIX=usr install
 
 binary: install
 	dh_testdir
