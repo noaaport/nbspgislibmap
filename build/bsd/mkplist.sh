@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $Id: mkplist.sh 769 2010-11-21 12:47:44Z nieves $
+# $Id$
 #
 # Use to generate the deb and rpm plist file when the bsd pkg-plist
 # is updated.

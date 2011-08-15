@@ -16,9 +16,10 @@ PKG_SHAREDIR = ${SHAREDIR}/nbspgislib
 PKG_MAPSDIR = ${PKG_SHAREDIR}/maps
 PKG_TCLLIBDIR = ${PKG_SHAREDIR}/tcl
 PKG_DOCDIR = ${DOCDIR}/nbspgislib
+PKG_EXAMPLESDIR = ${PKG_DOCDIR}/examples
 
 PKG_DIRS = ${PKG_BINDIR} ${PKG_SHAREDIR} ${PKG_MAPSDIR} \
-	${PKG_TCLLIBDIR} ${PKG_DOCDIR}
+	${PKG_TCLLIBDIR} ${PKG_DOCDIR} ${PKG_EXAMPLESDIR}
 
 SRC_TCLDIR = src/tcl
 SRC_MAPSDIR = src/maps
@@ -42,6 +43,11 @@ MAPSFILES = \
 
 GEODATAFILE = ${SRC_DATADIR}/geodata-mapfonts.tgz
 
+EXAMPLESFILES = ${SRC_TESTSDIR}/test1-bref.sh \
+	${SRC_TESTSDIR}/test2-bref.sh \
+	${SRC_TESTSDIR}/test3-bref.sh \
+	${SRC_TESTSDIR}/test4-bref.sh
+
 TCLSH = %TCLSH%
 
 all:
@@ -54,6 +60,7 @@ install: all
 	install -m 0755 ${BINFILES} ${PKG_BINDIR}
 	install -m 0644 ${TCLLIBFILES} ${PKG_TCLLIBDIR}
 	install -m 0644 ${MAPSFILES} ${PKG_MAPSDIR}
+	install -m 0644 ${EXAMPLESFILES} ${PKG_EXAMPLESDIR}
 	tar -xzf ${GEODATAFILE} -C ${PKG_SHAREDIR}
 
 tests: install
