@@ -31,43 +31,24 @@ Thus, in summary, "nbspglmap" is a low level interface while
 For the interested reader, the "map script template" for the bref
 radar images is in the subdirectory "share/nbspgislib/maps".
 
-This package includes some simple scripts to illustrate its basic
-usage which also serve as tests.
+This package includes some example scripts to illustrate its basic
+usage, which also serve as tests, in the directory
 
-1) testx-bref
-  
-   To prepare the test, execute
+       /usr/share/doc/nbspgislibmap/examples
 
-   make tests
+After copying any of the scripts to a directory where you have write
+permissions, they can be executed thus:
 
-   This will create a "bin" directory with the relevant tcl scripts
-   mentioned above, and a "tests" directory where the tests will be
-   carried out.
+./ex1-bref.sh jua n0r  (or n0q, n0z, ...)
 
-   To complete the installation, the following programs from the nbspgislib
-   library must be copied (manually) to the "bin" directory
+The script will download (from opennoaaport.net) the "latest" nids file
+for the given site/type combination, and will then invoke the
+two tcl scripts to cnvert the nids file(s) to shapefile(s)
+and finally generate the image using shp2img.
 
-   nbspunz
-   nbspradgis
-   nbspradinfo
-   nbspsatgis
-   nbspsatinfo
+The script
 
-   The bin-xxxx subdirectories have those programs already compiled
-   for some Os's.
+./ex2-bref.sh n0r
 
-   Then, inside the "tests" directory, the test-bref script can be
-   executed thus:
-
-   ./test1-bref.sh jua n0r
-   ./test1-bref.sh jua n0q
-   ./test1-bref.sh jua n0z
-   ....
-
-   The script will download (from opennoaaport.net) the "latest" nids file
-   for the given site/type combination, and will then invoke the
-   two tcl scripts to process the nids file and generate the image.
-
-   ./test2-bref n0r
-
-    will do a n0r composite of the TX sites.
+will do a n0r composite of the TX sites. The examples directory contains
+other similar scripts that can be used as the basis to build your own.
