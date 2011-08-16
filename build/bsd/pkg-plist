@@ -6,6 +6,8 @@ share/doc/nbspgislib/examples/ex2-bref.sh
 share/doc/nbspgislib/examples/ex3-bref.sh
 share/doc/nbspgislib/examples/ex4-bref.sh
 share/doc/nbspgislib/examples/ex1-rvel.sh
+share/doc/nbspgislib/readmes/README
+share/doc/nbspgislib/readmes/examples.README
 share/nbspgislib/mapfonts/VeraSe.ttf
 share/nbspgislib/mapfonts/VeraSeBd.ttf
 share/nbspgislib/mapfonts/VeraBd.ttf
