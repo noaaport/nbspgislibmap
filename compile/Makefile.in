@@ -40,14 +40,19 @@ MAPSFILES = \
 	${SRC_MAPSDIR}/bref.tmap \
 	${SRC_MAPSDIR}/bref_1.tmap \
 	${SRC_MAPSDIR}/bref_3.tmap \
-	${SRC_MAPSDIR}/bref_5.tmap
+	${SRC_MAPSDIR}/bref_5.tmap \
+	${SRC_MAPSDIR}/rvel.tmap \
+	${SRC_MAPSDIR}/rvel_1.tmap
 
 GEODATAFILE = ${SRC_DATADIR}/geodata-mapfonts.tgz
 
-EXAMPLESFILES = ${SRC_EXAMPLESDIR}/ex1-bref.sh \
+EXAMPLESFILES = \
+	${SRC_EXAMPLESDIR}/ex1a-bref.sh \
+	${SRC_EXAMPLESDIR}/ex1b-bref.sh \
 	${SRC_EXAMPLESDIR}/ex2-bref.sh \
 	${SRC_EXAMPLESDIR}/ex3-bref.sh \
-	${SRC_EXAMPLESDIR}/ex4-bref.sh
+	${SRC_EXAMPLESDIR}/ex4-bref.sh \
+	${SRC_EXAMPLESDIR}/ex1-rvel.sh
 
 TCLSH = %TCLSH%
 

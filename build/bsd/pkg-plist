@@ -1,9 +1,11 @@
 @owner root
 @group wheel
-share/doc/nbspgislib/examples/ex1-bref.sh
+share/doc/nbspgislib/examples/ex1a-bref.sh
+share/doc/nbspgislib/examples/ex1b-bref.sh
 share/doc/nbspgislib/examples/ex2-bref.sh
 share/doc/nbspgislib/examples/ex3-bref.sh
 share/doc/nbspgislib/examples/ex4-bref.sh
+share/doc/nbspgislib/examples/ex1-rvel.sh
 share/nbspgislib/mapfonts/VeraSe.ttf
 share/nbspgislib/mapfonts/VeraSeBd.ttf
 share/nbspgislib/mapfonts/VeraBd.ttf
@@ -19,6 +21,8 @@ share/nbspgislib/maps/bref_1.tmap
 share/nbspgislib/maps/bref.tmap
 share/nbspgislib/maps/bref_5.tmap
 share/nbspgislib/maps/bref_3.tmap
+share/nbspgislib/maps/rvel_1.tmap
+share/nbspgislib/maps/rvel.tmap
 share/nbspgislib/geodata/c_15jl09/c_15jl09.shx
 share/nbspgislib/geodata/c_15jl09/c_15jl09.prj
 share/nbspgislib/geodata/c_15jl09/c_15jl09.shp

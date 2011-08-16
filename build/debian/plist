@@ -1,7 +1,9 @@
-/usr/share/doc/nbspgislib/examples/ex1-bref.sh
+/usr/share/doc/nbspgislib/examples/ex1a-bref.sh
+/usr/share/doc/nbspgislib/examples/ex1b-bref.sh
 /usr/share/doc/nbspgislib/examples/ex2-bref.sh
 /usr/share/doc/nbspgislib/examples/ex3-bref.sh
 /usr/share/doc/nbspgislib/examples/ex4-bref.sh
+/usr/share/doc/nbspgislib/examples/ex1-rvel.sh
 /usr/share/nbspgislib/mapfonts/VeraSe.ttf
 /usr/share/nbspgislib/mapfonts/VeraSeBd.ttf
 /usr/share/nbspgislib/mapfonts/VeraBd.ttf
@@ -17,6 +19,8 @@
 /usr/share/nbspgislib/maps/bref.tmap
 /usr/share/nbspgislib/maps/bref_5.tmap
 /usr/share/nbspgislib/maps/bref_3.tmap
+/usr/share/nbspgislib/maps/rvel_1.tmap
+/usr/share/nbspgislib/maps/rvel.tmap
 /usr/share/nbspgislib/geodata/c_15jl09/c_15jl09.shx
 /usr/share/nbspgislib/geodata/c_15jl09/c_15jl09.prj
 /usr/share/nbspgislib/geodata/c_15jl09/c_15jl09.shp

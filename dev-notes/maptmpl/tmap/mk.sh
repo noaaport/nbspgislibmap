@@ -1,6 +1,6 @@
 #!/bin/sh
 
-for name in bref_1 bref_3 bref_5 bref
+for name in rvel_1 rvel
 do
     sed -e "/@classitem@/ {
 r ${name}.classitem

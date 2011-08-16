@@ -1,0 +1,113 @@
+	CLASSITEM "level"
+
+	 CLASS
+	   EXPRESSION ([level] < -64)
+	   STYLE
+	     COLOR 255 255 255
+	   END
+	 END
+
+	 CLASS
+	   EXPRESSION ([level] == -64)
+	   STYLE
+	     COLOR 0 255 255
+	   END
+	 END
+
+	 CLASS
+	   EXPRESSION ([level] > -64 && [level] <= -50)
+	   STYLE
+	     COLOR 0 207 255
+	   END
+	 END
+
+	 CLASS
+	   EXPRESSION ([level] > -50 && [level] <= -36)
+	   STYLE
+	     COLOR 0 95 255
+	   END
+	 END
+
+	 CLASS
+	   EXPRESSION ([level] > -36 && [level] <= -26)
+	   STYLE
+	     COLOR 107 235 0
+	   END
+	 END
+
+	 CLASS
+	   EXPRESSION ([level] > -26 && [level] <= -20)
+	   STYLE
+	     COLOR 83 211 0
+	   END
+	 END
+
+	 CLASS
+	   EXPRESSION ([level] > -20 && [level] <= -10)
+	   STYLE
+	     COLOR 47 175 0
+	   END
+	 END
+
+	 CLASS
+	   EXPRESSION ([level] > -10 && [level] <= -1)
+	   STYLE
+	     COLOR 189 189 189
+	   END
+	 END
+
+	 CLASS
+	   EXPRESSION ([level] >= 0 && [level] < 10)
+	   STYLE
+	     COLOR 242 222 176
+	   END
+	 END
+
+	 CLASS
+	   EXPRESSION ([level] >= 10 && [level] < 20)
+	   STYLE
+	     COLOR 255 235 0
+	   END
+	 END
+
+	 CLASS
+	   EXPRESSION ([level] >= 20 && [level] < 26)
+	   STYLE
+	     COLOR 255 195 0
+	   END
+	 END
+
+	 CLASS
+	   EXPRESSION ([level] >= 26 && [level] < 36)
+	   STYLE
+	     COLOR 255 155 0
+	   END
+	 END
+
+	 CLASS
+	   EXPRESSION ([level] >= 36 && [level] < 50)
+	   STYLE
+	     COLOR 208 0 0
+	   END
+	 END
+
+	 CLASS
+	   EXPRESSION ([level] >= 50 && [level] < 64)
+	   STYLE
+	     COLOR 168 0 0
+	   END
+	 END
+
+	 CLASS
+	   EXPRESSION ([level] == 64)
+	   STYLE
+	     COLOR 132 0 0
+	   END
+	 END
+
+	 CLASS
+	   EXPRESSION ([level] > 64)
+	   STYLE
+	     COLOR 255 255 255
+	   END
+	 END
