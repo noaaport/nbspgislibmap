@@ -14,15 +14,17 @@ DOCDIR = ${DESTDIR}/share/doc
 PKG_BINDIR = ${BINDIR}
 PKG_SHAREDIR = ${SHAREDIR}/nbspgislib
 PKG_MAPSDIR = ${PKG_SHAREDIR}/maps
+PKG_LEGENDSDIR = ${PKG_SHAREDIR}/legends
 PKG_TCLLIBDIR = ${PKG_SHAREDIR}/tcl
 PKG_DOCDIR = ${DOCDIR}/nbspgislib
 PKG_EXAMPLESDIR = ${PKG_DOCDIR}/examples
 
-PKG_DIRS = ${PKG_BINDIR} ${PKG_SHAREDIR} ${PKG_MAPSDIR} \
-	${PKG_TCLLIBDIR} ${PKG_DOCDIR} ${PKG_EXAMPLESDIR}
+PKG_DIRS = ${PKG_BINDIR} ${PKG_SHAREDIR} ${PKG_MAPSDIR} ${PKG_TCLLIBDIR} \
+	${PKG_DOCDIR} ${PKG_EXAMPLESDIR} ${PKG_LEGENDSDIR}
 
 SRC_TCLDIR = src/tcl
 SRC_MAPSDIR = src/maps
+SRC_LEGENDSDIR = src/legends
 SRC_NBSPGISLIB = src/nbspgislib/compile
 SRC_TESTSDIR = src/tests
 SRC_DATADIR = ../ext
@@ -43,6 +45,10 @@ MAPSFILES = \
 	${SRC_MAPSDIR}/bref_5.tmap \
 	${SRC_MAPSDIR}/rvel.tmap \
 	${SRC_MAPSDIR}/rvel_1.tmap
+
+LEGENDSFILES = \
+	${SRC_LEGENDSDIR}/legend_bref.html \
+	${SRC_LEGENDSDIR}/legend_rvel.html \
 
 GEODATAFILE = ${SRC_DATADIR}/geodata-mapfonts.tgz
 
@@ -66,6 +72,7 @@ install: all
 	install -m 0755 ${BINFILES} ${PKG_BINDIR}
 	install -m 0644 ${TCLLIBFILES} ${PKG_TCLLIBDIR}
 	install -m 0644 ${MAPSFILES} ${PKG_MAPSDIR}
+	install -m 0644 ${LEGENDSFILES} ${PKG_LEGENDSDIR}
 	install -m 0644 ${EXAMPLESFILES} ${PKG_EXAMPLESDIR}
 	tar -xzf ${GEODATAFILE} -C ${PKG_SHAREDIR}
 

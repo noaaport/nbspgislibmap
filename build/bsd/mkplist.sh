@@ -6,5 +6,5 @@
 # is updated.
 #
 
-awk '!/^@/ {printf("/usr/local/%s\n", $0)}' pkg-plist > ../debian/plist
-cp ../debian/plist ../rpm
+awk '!/^@/ {printf("/usr/%s\n", $0)}' pkg-plist > ../debian/plist
+# cp ../debian/plist ../rpm
