@@ -50,6 +50,7 @@
 /usr/share/nbspgislib/geodata/s_01au07/s_01au07.prj
 /usr/share/nbspgislib/geodata/s_01au07/s_01au07.dbf
 /usr/share/nbspgislib/tcl/radstations.tcl
+/usr/share/nbspgislib/tcl/pkgIndex.tcl
 /usr/bin/nbspsatinfo
 /usr/bin/nbspunz
 /usr/bin/nbspradgis

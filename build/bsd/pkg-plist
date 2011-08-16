@@ -52,6 +52,7 @@ share/nbspgislib/geodata/s_01au07/s_01au07.shx
 share/nbspgislib/geodata/s_01au07/s_01au07.prj
 share/nbspgislib/geodata/s_01au07/s_01au07.dbf
 share/nbspgislib/tcl/radstations.tcl
+share/nbspgislib/tcl/pkgIndex.tcl
 bin/nbspsatinfo
 bin/nbspunz
 bin/nbspradgis
