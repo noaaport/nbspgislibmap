@@ -6,11 +6,10 @@
 
 DESTDIR = /usr/local
 
-arch != uname -m
 package_version = ${version}_${package_build} 
 package_origin = ${package_category}/${name}
 package_name = ${name}-${package_version}
-package_file = ${package_name}.${arch}.${package_ext}
+package_file = ${package_name}.${package_ext}
 
 option_files = -f pkg-plist \
 	-c pkg-comment \
