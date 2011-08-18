@@ -199,7 +199,7 @@ set mapname [select_mapname $wmoid];
 set ascfile_list [list];
 foreach inputfile $inputfile_list {
     set ascname [file rootname [file tail $inputfile]];
-    exec nbspunz $inputfile | nbspsatgis -n $ascname;
+    exec nbspunz $inputfile | nbspsatgis -A -n $ascname;
     lappend ascfile_list ${ascname}$nbspglsatmap(ascfext);
 }
 
