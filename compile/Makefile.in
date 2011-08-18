@@ -34,7 +34,8 @@ SRC_READMESDIR = ../doc/readmes
 
 BINFILES = \
 	${SRC_TCLDIR}/nbspglmap \
-	${SRC_TCLDIR}/nbspglradmap
+	${SRC_TCLDIR}/nbspglradmap \
+	${SRC_TCLDIR}/nbspglsatmap
 
 TCLLIBFILES = \
 	${SRC_TCLDIR}/radstations.tcl \
