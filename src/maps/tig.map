@@ -1,0 +1,99 @@
+#
+# $Id$
+#
+
+# When this file is sourced (by nbspglmap), the following parameters
+# will have been set:
+#
+# map(geodata)
+# map(mapfonts)
+# map(inputfile,<i>)
+# map(extent)
+# map(size)
+# map(imagetype) = png, gif, ...
+#
+# These defaults can (should) be overriden via the -D switch to
+# nbspglmap. In practice, they are set in the "bundle configuration file".
+#
+set _map(extent) {-126 30 -66 50};
+set _map(size) {512 512};
+set _map(imagetype) png;
+#
+foreach _k [list extent size] {
+    if {[info exists map($_k)] == 0} {
+        set map($_k) $_map($_k);
+    }
+}
+
+set header {
+MAP
+    #
+    # Allow the possibility that the extent parameters are
+    # specified as "a b c d" or "a;b;c;d", and similarly with the size.
+    #
+    UNITS  DD
+    EXTENT [string map [list ";" " "] $map(extent)]
+    SIZE [string map [list ";" " "] $map(size)]
+    IMAGETYPE $map(imagetype)
+    FONTSET "$map(mapfonts)/fonts.list"
+    IMAGECOLOR 0 0 0
+}
+
+# Sat layer. One for each sat image.
+set sat {
+
+LAYER
+    NAME $name
+    DATA $datafile	# asc file
+    TYPE RASTER
+    STATUS ON
+    TRANSPARENCY 100	# or OPACITY 0 (TRANSPARENCY is deprecated)
+    #
+    # PROCESSING "SCALE=0,80"
+    # PROCESSING "SCALE_BUCKETS=16"
+    #
+END
+}
+
+set world {
+LAYER
+    TYPE POLYGON
+    NAME "world"
+    STATUS ON
+    DATA "$map(geodata)/world/world.shp"
+    CLASS
+	NAME "world-outline"
+	OUTLINECOLOR 255 255 255
+    END
+END
+}
+
+set states {
+LAYER
+    TYPE POLYGON
+    NAME "states"
+    STATUS ON
+    DATA "$map(geodata)/s_01au07/s_01au07.shp"
+    CLASS
+	NAME "states-outline"
+	OUTLINECOLOR 255 255 255
+    END
+END
+}
+
+#
+# Build the main script
+#
+set MAP [subst $header];
+set i 1;
+foreach k [array names map "inputfile,*"] {
+    set name "sat-$i";
+    set datafile $map($k);
+    append MAP "\n" [subst $sat];
+    incr i;
+}
+append MAP "\n" [subst $world];
+append MAP "\n" [subst $states];
+append MAP "\n" "END" "\n";
+
+set map(scriptstr) $MAP;

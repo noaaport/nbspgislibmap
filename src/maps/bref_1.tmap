@@ -1,7 +1,7 @@
 #
 # $Id$
 #
-# When this file is sourced (by nbspradgism), the following parameters
+# When this file is sourced (by nbspglmap), the following parameters
 # will have been set:
 #
 # map(geodata)
@@ -12,7 +12,7 @@
 # map(imagetype) = png, gif, ...
 #
 # These (extent and size) defaults can (should) be overriden via
-# the -D switch to nbspgismap1. In practice, they are set in the
+# the -D switch to nbspglmap. In practice, they are set in the
 # "bundle configuration file".
 #
 set _map(extent) {-126 30 -66 50};
