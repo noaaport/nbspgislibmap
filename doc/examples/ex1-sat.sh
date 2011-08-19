@@ -33,5 +33,5 @@ echo "Generating asc and png ..."
 # nbspglsatmap -k tigw${type}_latest.gini tige${type}_latest.gini
 #
 
-nbspglsatmap -k -q -r "0,0,5,0;10,0,0,0" \
+nbspglsatmap -k -q -r "0,0,5,0;5,0,0,0" \
     tigw${type}_latest.gini tige${type}_latest.gini

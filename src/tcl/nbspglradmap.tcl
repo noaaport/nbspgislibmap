@@ -110,6 +110,10 @@ if {$argc != 0} {
     set inputfile_list [split [string trim [read stdin]]];
 }
 
+if {[llength $inputfile_list] == 0} {
+    err "No files given.";
+}
+
 set sitelist [list];
 foreach inputfile $inputfile_list {
     verify_inputfile_namefmt $inputfile;

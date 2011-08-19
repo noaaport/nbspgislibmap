@@ -30,8 +30,9 @@ package require cmdline;
 set basedir [file join [file dirname [info script]] ".."];
 set sharedir [file join $basedir "share" "nbspgislib"];
 
-lappend auto_path [file join $sharedir];
-package require "nbsp::radstations";
+#
+# lappend auto_path [file join $sharedir];
+#
 
 set nbspglsatmap(ascfext) ".asc";
 
@@ -153,9 +154,6 @@ proc update_extent {old_extent new_extent} {
 #
 # init
 #
-#
-# init
-#
 set usage {nbspglsatmap [-b] [-k] [-d outputdir] [-e extent]
     [-f mapfontsdir] [-g geodatadir] [-m | -M maptemplate] [-o outputname]
     [-q] [-r lon1,lat1,lon2,lat2] [-s size] [-t imagetype] [-D <defs>]
@@ -177,6 +175,10 @@ if {$argc != 0} {
     set inputfile_list $argv;
 } else {
     set inputfile_list [split [string trim [read stdin]]];
+}
+
+if {[llength $inputfile_list] == 0} {
+    err "No files given.";
 }
 
 set regionlist [list];
