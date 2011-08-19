@@ -1,5 +1,5 @@
-nbspgislibmap (1.0.1p1-1) stable; urgency=low
+nbspgislibmap (1.0.1p2-1) stable; urgency=low
 
   * Initial debian package release
 
- -- Jose F Nieves <nieves@ltp.uprrp.edu>  Mon, 15 Aug 2011 20:44:42 -0400
+ -- Jose F Nieves <nieves@ltp.uprrp.edu>  Thu, 18 Aug 2011 23:32:14 -0400

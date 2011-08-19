@@ -10,6 +10,7 @@
 # -m => override the default map template determination (use as is)
 # -M => same as -m but look for map in the std directories
 # -b,d,f,g,o,s,t,D => are passed to nbspglmap intact
+# -r, -q => are passed to nbspsatgis intact 
 #
 # Example: nbspglsatmap tige01_20110818_1715.gini
 #
@@ -32,7 +33,6 @@ set sharedir [file join $basedir "share" "nbspgislib"];
 lappend auto_path [file join $sharedir];
 package require "nbsp::radstations";
 
-# 
 set nbspglsatmap(ascfext) ".asc";
 
 proc err {s} {
@@ -158,11 +158,12 @@ proc update_extent {old_extent new_extent} {
 #
 set usage {nbspglsatmap [-b] [-k] [-d outputdir] [-e extent]
     [-f mapfontsdir] [-g geodatadir] [-m | -M maptemplate] [-o outputname]
-    [-s size] [-t imagetype] [-D <defs>]
+    [-q] [-r lon1,lat1,lon2,lat2] [-s size] [-t imagetype] [-D <defs>]
     <nidsfile_1> ... <nidsfile_n>};
 
-set optlist {b k {d.arg ""} {D.arg ""} {e.arg ""} {f.arg ""}
-    {g.arg ""} {m.arg ""} {M.arg ""} {o.arg ""} {s.arg ""} {t.arg ""}};
+set optlist {b k q {d.arg ""} {D.arg ""} {e.arg ""} {f.arg ""}
+    {g.arg ""} {m.arg ""} {M.arg ""} {o.arg ""} {r.arg ""}
+    {s.arg ""} {t.arg ""}};
 
 array set option [::cmdline::getoptions argv $optlist $usage];
 set argc [llength $argv];
@@ -196,10 +197,28 @@ foreach inputfile $inputfile_list {
 
 set mapname [select_mapname $wmoid];
 
+if {$option(r) ne ""} {
+    set optr_list [split $option(r) ";"];
+} else {
+    set optr_list [list];
+}
+
 set ascfile_list [list];
 foreach inputfile $inputfile_list {
     set ascname [file rootname [file tail $inputfile]];
-    exec nbspunz $inputfile | nbspsatgis -A -n $ascname;
+    set cmd [list exec nbspunz $inputfile | nbspsatgis -A -n $ascname];
+
+    if {[llength $optr_list] != 0} {
+	set opts [list "-r" [lindex $optr_list 0]];
+	set optr_list [lreplace $optr_list 0 0];
+	if {$option(q) == 1} {
+	    lappend opts "-q";
+	}
+	set cmd [concat $cmd $opts];
+    }
+
+    eval $cmd;
+
     lappend ascfile_list ${ascname}$nbspglsatmap(ascfext);
 }
 

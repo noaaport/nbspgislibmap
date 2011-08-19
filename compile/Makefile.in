@@ -62,7 +62,8 @@ EXAMPLESFILES = \
 	${SRC_EXAMPLESDIR}/ex2-bref.sh \
 	${SRC_EXAMPLESDIR}/ex3-bref.sh \
 	${SRC_EXAMPLESDIR}/ex4-bref.sh \
-	${SRC_EXAMPLESDIR}/ex1-rvel.sh
+	${SRC_EXAMPLESDIR}/ex1-rvel.sh \
+	${SRC_EXAMPLESDIR}/ex1-sat.sh
 
 READMESFILES = ${SRC_READMESDIR}/README \
 	${SRC_READMESDIR}/examples.README
