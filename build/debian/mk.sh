@@ -4,10 +4,8 @@
 
 cd ../..
 
-cp -R build/debian .
+cp -r build/debian .
 dpkg-buildpackage
-cp ../${name}_${version}*.deb build/debian
 fakeroot debian/rules distclean
 
-cd build/debian
-./ckplist.sh ${name}_${version}*.deb
+build/debian/ckplist.sh build/debian/plist ../${name}_${version}*.deb
