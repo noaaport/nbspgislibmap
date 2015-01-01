@@ -6,14 +6,14 @@
 #
 # config
 #
+plist_file="plist"
 deb_plist_file="deb_plist"
 
 #
 # main
 #
-[ $# -ne 2 ] && { echo "ckplist <plist-file> <pkg_file>"; exit 1; }
-plist_file=$1
-pkgfile=$2
+[ $# -eq 0 ] && { echo "No pkg name."; exit 1; }
+pkgfile=$1
 
 # Get the list of packaged files
 dpkg -c $pkgfile | awk '{print substr($6,2)}' > $deb_plist_file

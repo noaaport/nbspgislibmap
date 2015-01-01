@@ -2,10 +2,10 @@
 
 name=nbspgislibmap
 
-tgzfile=${name}.tgz
+#tgzfile=${name}.tgz
 
-rm -rf $name
-tar -xzf $tgzfile
+#rm -rf $name
+#tar -xzf $tgzfile
 
 cd $name/build/debian
 ./mk.sh

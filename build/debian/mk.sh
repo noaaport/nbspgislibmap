@@ -1,11 +1,18 @@
 #!/bin/sh
 
-. ../../VERSION
+branchname=nbspgislibmap
 
-cd ../..
+cd ../../..
+. ./${branchname}/VERSION
 
-cp -r build/debian .
-dpkg-buildpackage
-fakeroot debian/rules distclean
+rm -rf ${name}-${version}
+cp -r $branchname ${name}-${version}
 
-build/debian/ckplist.sh build/debian/plist ../${name}_${version}*.deb
+cd ${name}-${version}
+rm -rf debian
+cp -R build/debian .
+dpkg-buildpackage -rfakeroot -uc -us
+cp ../${name}_${version}*.deb build/debian
+
+cd build/debian
+./ckplist.sh ${name}_${version}*.deb
