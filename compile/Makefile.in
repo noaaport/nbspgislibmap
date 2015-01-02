@@ -48,11 +48,13 @@ MAPSFILES = \
 	${SRC_MAPSDIR}/bref_5.tmap \
 	${SRC_MAPSDIR}/rvel.tmap \
 	${SRC_MAPSDIR}/rvel_1.tmap \
+	${SRC_MAPSDIR}/nxp.tmap \
 	${SRC_MAPSDIR}/tig.tmap
 
 LEGENDSFILES = \
 	${SRC_LEGENDSDIR}/legend_bref.html \
 	${SRC_LEGENDSDIR}/legend_rvel.html \
+	${SRC_LEGENDSDIR}/legend_nxp.html
 
 GEODATAFILE = ${SRC_DATADIR}/geodata-mapfonts.tgz
 
