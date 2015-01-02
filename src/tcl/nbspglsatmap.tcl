@@ -45,7 +45,8 @@ proc err {s} {
 proc verify_inputfile_namefmt {inputfile} {
 
     set fbasename [file tail $inputfile];
-    set re {^[[:alnum:]]{6}.+\.gini$};
+    # set re {^[[:alnum:]]{6}.*\.gini$};
+    set re {^[[:alnum:]]{6}};          # don't require the gini extension
 
     if {[regexp $re $fbasename] == 0} {
 	return -code error "Invalid input file name: $inputfile";

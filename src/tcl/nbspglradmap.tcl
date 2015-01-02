@@ -17,7 +17,7 @@
 #
 # The inputfile name has the format
 #
-# <awips><anything>.nids
+# <awips><anything>[.nids]
 #
 # Then from the the <awips> the map template to use is determined as well
 # as the extent (for the site).
@@ -43,7 +43,8 @@ proc err {s} {
 proc verify_inputfile_namefmt {inputfile} {
 
     set fbasename [file tail $inputfile];
-    set re {^[[:alnum:]]{6}.*\.nids$};
+    # set re {^[[:alnum:]]{6}.*\.nids$};
+    set re {^[[:alnum:]]{6}};           # don't require nids extension
 
     if {[regexp $re $fbasename] == 0} {
 	#return -code error "Invalid input file name: $inputfile";
