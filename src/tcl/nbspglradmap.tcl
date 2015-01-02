@@ -27,7 +27,7 @@
 #
 package require cmdline;
 
-# Once and for all (assumes a "standard" dir tree)
+# Once and for all (this implies a "standard" dir tree)
 set basedir [file join [file dirname [info script]] ".."];
 set sharedir [file join $basedir "share" "nbspgislib"];
 
@@ -43,10 +43,11 @@ proc err {s} {
 proc verify_inputfile_namefmt {inputfile} {
 
     set fbasename [file tail $inputfile];
-    set re {^[[:alnum:]]{6}.+\.nids$};
+    set re {^[[:alnum:]]{6}.*\.nids$};
 
     if {[regexp $re $fbasename] == 0} {
-	return -code error "Invalid input file name: $inputfile";
+	#return -code error "Invalid input file name: $inputfile";
+	err "Invalid input file name: $inputfile";
     }
 }
 
@@ -56,8 +57,11 @@ proc select_mapname {awips1} {
 	set mapname "bref";
     } elseif {[regexp {^n.(u|v)$} $awips1]} {
 	set mapname "rvel";
+    } elseif {[regexp {^n(1|3|t)p} $awips1]} {
+	set mapname "nxp";
     } else {
-	return -code error "Unsupported nids type";
+	# return -code error "Unsupported nids type: $awips1";
+	err "Unsupported nids type: $awips1";
     }
 
     return $mapname;
@@ -82,9 +86,6 @@ proc check_conflicts {usage} {
     }
 }
 
-#
-# init
-#
 #
 # init
 #
@@ -132,7 +133,7 @@ foreach inputfile $inputfile_list {
 
 set mapname [select_mapname $awips1];
 
-if {[regexp {^n.(r|v|z)} $awips1]} {
+if {[regexp {^n.(r|v|z)} $awips1] || [regexp {^n(1|3|t)p} $awips1]} {
     set do_nbspunz 1;
     set extent [::nbsp::radstations::extent_bysitelist $sitelist];
 } else {

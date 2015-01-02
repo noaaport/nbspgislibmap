@@ -7,7 +7,7 @@ Standards-Version: 3.7.2
 
 Package: nbspgislibmap
 Architecture: any
-Depends: ${shlibs:Depends}, tcl8.5, tcllib, bzip2, libbz2-dev, mapserver-bin
+Depends: ${shlibs:Depends}, tcl, tcllib, bzip2, libbz2-dev, mapserver-bin
 Description: A collection of programs, Tcl scripts and Mapserver scripts
  for processing Radar Level III (Nids) data files and producing
  map images. 
