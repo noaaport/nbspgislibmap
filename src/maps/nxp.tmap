@@ -160,7 +160,7 @@ LAYER
 	 CLASS
 	   EXPRESSION (\[level\] >= 800)
 	   STYLE
-	     COLOR 102 0 51
+	     COLOR 128 0 0
 	   END
 	 END
 END
