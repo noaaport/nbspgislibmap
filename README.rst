@@ -11,3 +11,10 @@ to convert the data to the appropriate gis formats and then process the
 resulting files using *mapserver*.
 
 The wiki has some examples about usage.
+
+Latest News  - 03 Jan 2015
+=====================
+
+The new version  supports *Storm precipitation accumulation* products
+(e.g. N1P), as shown in this `example
+<http://www.noaaport.net/examples/gis/n1plvx>`_.
