@@ -1,3 +1,11 @@
+/usr/bin/nbspradinfo
+/usr/bin/nbspsatinfo
+/usr/bin/nbspradgis
+/usr/bin/nbspsatgis
+/usr/bin/nbspunz
+/usr/bin/nbspglmap
+/usr/bin/nbspglradmap
+/usr/bin/nbspglsatmap
 /usr/share/doc/nbspgislib/examples/ex1a-bref.sh
 /usr/share/doc/nbspgislib/examples/ex1b-bref.sh
 /usr/share/doc/nbspgislib/examples/ex2-bref.sh
@@ -55,11 +63,3 @@
 /usr/share/nbspgislib/geodata/s_01au07/s_01au07.dbf
 /usr/share/nbspgislib/tcl/radstations.tcl
 /usr/share/nbspgislib/tcl/pkgIndex.tcl
-/usr/bin/nbspsatinfo
-/usr/bin/nbspunz
-/usr/bin/nbspradgis
-/usr/bin/nbspglmap
-/usr/bin/nbspradinfo
-/usr/bin/nbspsatgis
-/usr/bin/nbspglradmap
-/usr/bin/nbspglsatmap

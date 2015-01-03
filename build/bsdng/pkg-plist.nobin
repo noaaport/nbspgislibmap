@@ -1,10 +1,5 @@
 @owner root
 @group wheel
-bin/nbspradinfo
-bin/nbspsatinfo
-bin/nbspradgis
-bin/nbspsatgis
-bin/nbspunz
 bin/nbspglmap
 bin/nbspglradmap
 bin/nbspglsatmap
