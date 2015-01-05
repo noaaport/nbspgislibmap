@@ -5,11 +5,13 @@
 # These are for manipulation by packaging tools
 PKGBUILDDIR = pkg
 PREFIX = usr/local
+MANSUBDIR = man/man1
 
 DESTDIR = ${PKGBUILDDIR}/${PREFIX}
 BINDIR = ${DESTDIR}/bin
 SHAREDIR = ${DESTDIR}/share
 DOCDIR = ${DESTDIR}/share/doc
+MANDIR = ${DESTDIR}/${MANSUBDIR}
 
 PKG_BINDIR = ${BINDIR}
 PKG_SHAREDIR = ${SHAREDIR}/nbspgislib
@@ -19,9 +21,11 @@ PKG_TCLLIBDIR = ${PKG_SHAREDIR}/tcl
 PKG_DOCDIR = ${DOCDIR}/nbspgislib
 PKG_EXAMPLESDIR = ${PKG_DOCDIR}/examples
 PKG_READMESDIR = ${PKG_DOCDIR}/readmes
+PKG_MANDIR = ${MANDIR}
 
 PKG_DIRS = ${PKG_BINDIR} ${PKG_SHAREDIR} ${PKG_MAPSDIR} ${PKG_LEGENDSDIR} \
-	${PKG_TCLLIBDIR} ${PKG_DOCDIR} ${PKG_EXAMPLESDIR}  ${PKG_READMESDIR}
+	${PKG_TCLLIBDIR} ${PKG_DOCDIR} ${PKG_EXAMPLESDIR}  ${PKG_READMESDIR} \
+	${PKG_MANDIR}
 
 SRC_TCLDIR = src/tcl
 SRC_MAPSDIR = src/maps
@@ -86,6 +90,9 @@ install: all
 	install -m 0644 ${EXAMPLESFILES} ${PKG_EXAMPLESDIR}
 	install -m 0644 ${READMESFILES} ${PKG_READMESDIR}
 	tar -xzf ${GEODATAFILE} -C ${PKG_SHAREDIR}
+
+install-man:
+	cd ${SRC_NBSPGISLIB}; ${MAKE} install-man
 
 tests: install
 	cp -R ${SRC_TESTSDIR} ${DESTDIR}

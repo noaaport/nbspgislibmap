@@ -39,7 +39,8 @@ install: build
 	install -d ${pkg_metadir_nobin}
 	PKGBUILDDIR=`pwd`/${pkg_root}; \
 		cd ../../compile; \
-	   	${MAKE} PKGBUILDDIR=$${PKGBUILDDIR} install
+	   	${MAKE} PKGBUILDDIR=$${PKGBUILDDIR} install; \
+	   	${MAKE} PKGBUILDDIR=$${PKGBUILDDIR} install-man
 
 ${pkg_metadir}/+DESC: pkg-desc.in
 	cp pkg-desc.in ${pkg_metadir}/+DESC

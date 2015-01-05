@@ -8,6 +8,11 @@ bin/nbspunz
 bin/nbspglmap
 bin/nbspglradmap
 bin/nbspglsatmap
+man/man1/nbspunz.1.gz
+man/man1/nbspradinfo.1.gz
+man/man1/nbspradgis.1.gz
+man/man1/nbspsatinfo.1.gz
+man/man1/nbspsatgis.1.gz
 share/doc/nbspgislib/examples/ex1a-bref.sh
 share/doc/nbspgislib/examples/ex1b-bref.sh
 share/doc/nbspgislib/examples/ex2-bref.sh
