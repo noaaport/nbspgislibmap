@@ -18,14 +18,18 @@ gini files (such as those received via NOAAPort), to produce
 %prep
 
 %setup
-cd compile; ./configure.sh
+cd compile
+./configure.sh
 
 %build
-cd compile; make %{?_smp_mflags}
+cd compile
+make %{?_smp_mflags}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-cd compile; make install PKGBUILDDIR=$RPM_BUILD_ROOT PREFIX=usr
+cd compile
+make install PKGBUILDDIR=$RPM_BUILD_ROOT PREFIX=usr
+make install-man PKGBUILDDIR=$RPM_BUILD_ROOT PREFIX=usr MANPREFIX=share
 
 %clean
 rm -rf $RPM_BUILD_ROOT

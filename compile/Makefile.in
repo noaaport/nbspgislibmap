@@ -5,13 +5,14 @@
 # These are for manipulation by packaging tools
 PKGBUILDDIR = pkg
 PREFIX = usr/local
+MANPREFIX =		# or "share" when prefix=usr
 MANSUBDIR = man/man1
 
 DESTDIR = ${PKGBUILDDIR}/${PREFIX}
 BINDIR = ${DESTDIR}/bin
 SHAREDIR = ${DESTDIR}/share
 DOCDIR = ${DESTDIR}/share/doc
-MANDIR = ${DESTDIR}/${MANSUBDIR}
+MANDIR = ${DESTDIR}/${MANPREFIX}/${MANSUBDIR}
 
 PKG_BINDIR = ${BINDIR}
 PKG_SHAREDIR = ${SHAREDIR}/nbspgislib
@@ -28,6 +29,7 @@ PKG_DIRS = ${PKG_BINDIR} ${PKG_SHAREDIR} ${PKG_MAPSDIR} ${PKG_LEGENDSDIR} \
 	${PKG_MANDIR}
 
 SRC_TCLDIR = src/tcl
+SRC_MANDIR = doc/man
 SRC_MAPSDIR = src/maps
 SRC_LEGENDSDIR = src/legends
 SRC_NBSPGISLIB = src/nbspgislib/compile
@@ -40,6 +42,11 @@ BINFILES = \
 	${SRC_TCLDIR}/nbspglmap \
 	${SRC_TCLDIR}/nbspglradmap \
 	${SRC_TCLDIR}/nbspglsatmap
+
+MANFILES = \
+	${SRC_MANDIR}/nbspglmap.1.gz \
+	${SRC_MANDIR}/nbspglradmap.1.gz \
+	${SRC_MANDIR}/nbspglsatmap.1.gz
 
 TCLLIBFILES = \
 	${SRC_TCLDIR}/radstations.tcl \
@@ -78,6 +85,7 @@ TCLSH = %TCLSH%
 
 all:
 	cd ${SRC_TCLDIR}; ${MAKE} TCLSH=${TCLSH}
+	cd ${SRC_MANDIR}; ${MAKE}
 	cd ${SRC_NBSPGISLIB}; ${MAKE}
 
 install: all
@@ -91,7 +99,9 @@ install: all
 	install -m 0644 ${READMESFILES} ${PKG_READMESDIR}
 	tar -xzf ${GEODATAFILE} -C ${PKG_SHAREDIR}
 
-install-man:
+install-man: all
+	install -d ${MANDIR}
+	install -m 0644 ${MANFILES} ${MANDIR}
 	cd ${SRC_NBSPGISLIB}; ${MAKE} install-man
 
 tests: install
@@ -101,5 +111,5 @@ clean:
 	rm -rf *~ ${PKGBUILDDIR}
 
 distclean: clean
-	rm -rf src
+	rm -rf doc src
 	rm -f Makefile

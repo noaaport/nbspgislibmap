@@ -1,0 +1,42 @@
+.\"
+.\" $Id$
+.\"
+.\" See LICENSE
+.\"
+.TH NBSPGLRADMAP 1 "4 JANUARY, 2015"
+.SH NAME
+nbspglradmap \- Create GIS maps from Nexrad Nids files
+.SH SYNOPSIS
+\fBnbspglradmap\fR [-b] [-k] [-e extent] [-m | -M maptemplate] [opts]
+<nids_file(s)>
+.PP
+Example:
+.PP
+.RS 2
+nbspglradmap n0rjua_20110808_1948.nids
+.RE
+.PP
+The input file name must have the following format
+.PP
+.RS 2
+<awips><anything>[.nids]
+.RE
+.PP
+Then from the the <awips> the map template to use is determined as well
+as the extent (for the site).
+The input file(s) can be given in the command line argument or in stdin.
+When there is more than one file, all must be of the same type (e.g. n0r).
+.PP
+The options are:
+.PP
+.RS 2
+-k => keep the shapefiles created
+.br
+-e => override the default extent calculation
+.br
+-m => override the default map template determination (use as is)
+.br
+-M => same as -m but look for map in the std directories
+.br
+-b,d,f,g,o,s,t,D => are passed to nbspglmap intact
+.RE

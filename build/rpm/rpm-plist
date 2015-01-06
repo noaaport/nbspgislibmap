@@ -6,6 +6,14 @@
 /usr/bin/nbspglmap
 /usr/bin/nbspglradmap
 /usr/bin/nbspglsatmap
+/usr/share/man/man1/nbspunz.1.gz
+/usr/share/man/man1/nbspradinfo.1.gz
+/usr/share/man/man1/nbspradgis.1.gz
+/usr/share/man/man1/nbspsatinfo.1.gz
+/usr/share/man/man1/nbspsatgis.1.gz
+/usr/share/man/man1/nbspglmap.1.gz
+/usr/share/man/man1/nbspglradmap.1.gz
+/usr/share/man/man1/nbspglsatmap.1.gz
 /usr/share/doc/nbspgislib/examples/ex1a-bref.sh
 /usr/share/doc/nbspgislib/examples/ex1b-bref.sh
 /usr/share/doc/nbspgislib/examples/ex2-bref.sh

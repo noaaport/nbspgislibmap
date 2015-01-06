@@ -8,8 +8,11 @@ done
 
 sed -e "/%TCLSH%/s||$TCLSH|" Makefile.in > Makefile
 
-rm -rf src
-cp -R ../src .
+for d in doc src
+do
+    rm -rf $d
+    cp -R ../$d .
+done
 
 tar -xzf ../ext/nbspgislib-${nbspgislibversion}.tgz -C src
 mv src/nbspgislib-${nbspgislibversion} src/nbspgislib

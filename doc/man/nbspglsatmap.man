@@ -1,0 +1,41 @@
+.\"
+.\" $Id$
+.\"
+.\" See LICENSE
+.\"
+.TH NBSPGLSATMAP 1 "4 JANUARY, 2015"
+.SH NAME
+nbspglsatmap \- Create GIS maps from Satellite GINI files
+.SH SYNOPSIS
+\fBnbspglsatmap\fR [-b] [-k] [-e extent] [-m | -M maptemplate] [opts]
+<gini_file(s)>
+.PP
+Example:
+.PP
+.RS 2
+nbspglsatmap tige01_20110818_1715.gini
+.RE
+.PP
+The inputfile name must have the format
+.PP
+.RS 2
+<tigxxx><anything>.gini
+.RE
+.PP
+Then from the the <wmoid> the map template to use.
+The input file(s) can be given in the command line argument or in stdin.
+.PP
+The options are:
+.RS 2
+-k => keep the shapefiles created
+.br
+-e => override the default extent calculation
+.br
+-m => override the default map template determination (use as is)
+.br
+-M => same as -m but look for map in the std directories
+.br
+-b,d,f,g,o,s,t,D => are passed to nbspglmap intact
+.br
+-r, -q => are passed to nbspsatgis intact 
+.RE
