@@ -15,7 +15,7 @@ The wiki has some examples about usage.
 Latest News - 06 Jan 2015
 ====================
 
-Binary packages for FreeBSD-10.1, Ubuntu-14.04 and Centos-6.6 are available in the Downloads section.
+Binary packages for FreeBSD-10.1, Ubuntu-14.04 and CentOS-6.6 are available in the Downloads section.
 
 News  - 03 Jan 2015
 ================
