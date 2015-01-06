@@ -1,7 +1,7 @@
 Name:           nbspgislibmap
 Version:        @version@
 Release:        @rpmrelease@%{?dist}
-Summary:        Nbsp GIS Library programs
+Summary:        Nbsp GIS Maps programs and sripts
 Group:          Applications/Internet
 License:        BSD
 URL:            http://www.noaaport.net
