@@ -60,12 +60,27 @@ proc select_mapname {awips1} {
 	set mapname "rvel";
     } elseif {[regexp {^n(1|3|t)p} $awips1]} {
 	set mapname "nxp";
+    } elseif {[regexp {^n(1|2|3)s} $awips1]} {
+	set mapname "srvel";
     } else {
 	# return -code error "Unsupported nids type: $awips1";
 	err "Unsupported nids type: $awips1";
     }
 
     return $mapname;
+}
+
+proc is_zlib_compressed {awips1} {
+
+    set r 0;
+
+    if {[regexp {^n.(r|v|z)} $awips1] || \
+	    [regexp {^n(1|3|t)p} $awips1] || \
+	    [regexp {^n(1|2|3)s} $awips1]} {
+	set r 1;
+    }
+
+    return $r;
 }
 
 proc check_conflicts {usage} {
@@ -120,8 +135,8 @@ set sitelist [list];
 foreach inputfile $inputfile_list {
     verify_inputfile_namefmt $inputfile;
 
-    set awips [string range [file tail $inputfile] 0 5];
-    set site [string range $awips 3 5];
+    set awips [string tolower [string range [file tail $inputfile] 0 5]];
+    set site [string tolower [string range $awips 3 5]];
 
     if {[info exists awips1] == 0} {
 	set awips1 [string range $awips 0 2];
@@ -134,16 +149,18 @@ foreach inputfile $inputfile_list {
 
 set mapname [select_mapname $awips1];
 
-if {[regexp {^n.(r|v|z)} $awips1] || [regexp {^n(1|3|t)p} $awips1]} {
+if {[is_zlib_compressed $awips1]} {
     set do_nbspunz 1;
-    set extent [::nbsp::radstations::extent_bysitelist $sitelist];
+    set shift 2;
 } else {
     set do_nbspunz 0;
-    if {[llength $sitelist] == 1} {
-	set extent [::nbsp::radstations::extent_bysite $site 4];
-    } else {
-	set extent [::nbsp::radstations::extent_bysitelist $sitelist];
-    }
+    set shift 4;
+}
+
+if {[llength $sitelist] == 1} {
+    set extent [::nbsp::radstations::extent_bysite $site $shift];
+} else {
+    set extent [::nbsp::radstations::extent_bysitelist -s $shift $sitelist];
 }
 
 set shpname_list [list];

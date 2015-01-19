@@ -60,12 +60,14 @@ MAPSFILES = \
 	${SRC_MAPSDIR}/rvel.tmap \
 	${SRC_MAPSDIR}/rvel_1.tmap \
 	${SRC_MAPSDIR}/nxp.tmap \
+	${SRC_MAPSDIR}/srvel.tmap \
 	${SRC_MAPSDIR}/tig.tmap
 
 LEGENDSFILES = \
 	${SRC_LEGENDSDIR}/legend_bref.html \
 	${SRC_LEGENDSDIR}/legend_rvel.html \
-	${SRC_LEGENDSDIR}/legend_nxp.html
+	${SRC_LEGENDSDIR}/legend_nxp.html \
+	${SRC_LEGENDSDIR}/legend_srvel.html
 
 GEODATAFILE = ${SRC_DATADIR}/geodata-mapfonts.tgz
 

@@ -1,8 +1,14 @@
+nbspgislibmap (1.0.1p4-1) stable; urgency=low
+
+  * Added support for n{1,2,3}s
+
+ -- Jose F Nieves <nieves@ltp.uprrp.edu>  Sun, 18 Jan 2015 14:54:06 -0400
+
 nbspgislibmap (1.0.1p3-1) stable; urgency=low
 
   * Added support for n1p
 
- -- Jose F Nieves <nieves@ltp.uprrp.edu>  Tue, 30 Dec 2014 20:51:24 -0400 
+ -- Jose F Nieves <nieves@ltp.uprrp.edu>  Tue, 30 Dec 2014 20:51:24 -0400
 
 nbspgislibmap (1.0.1p2-1) stable; urgency=low
 
