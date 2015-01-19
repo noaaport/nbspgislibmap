@@ -33,10 +33,12 @@ share/nbspgislib/maps/bref_3.tmap
 share/nbspgislib/maps/rvel_1.tmap
 share/nbspgislib/maps/rvel.tmap
 share/nbspgislib/maps/nxp.tmap
+share/nbspgislib/maps/srvel.tmap
 share/nbspgislib/maps/tig.tmap
 share/nbspgislib/legends/legend_bref.html
 share/nbspgislib/legends/legend_rvel.html
 share/nbspgislib/legends/legend_nxp.html
+share/nbspgislib/legends/legend_srvel.html
 share/nbspgislib/geodata/c_15jl09/c_15jl09.shx
 share/nbspgislib/geodata/c_15jl09/c_15jl09.prj
 share/nbspgislib/geodata/c_15jl09/c_15jl09.shp

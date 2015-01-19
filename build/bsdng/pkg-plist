@@ -43,6 +43,7 @@ share/nbspgislib/maps/bref_3.tmap
 share/nbspgislib/maps/rvel_1.tmap
 share/nbspgislib/maps/rvel.tmap
 share/nbspgislib/maps/nxp.tmap
+share/nbspgislib/maps/srvel.tmap
 share/nbspgislib/maps/tig.tmap
 share/nbspgislib/legends/legend_bref.html
 share/nbspgislib/legends/legend_rvel.html
