@@ -1,3 +1,9 @@
+nbspgislibmap (1.0.1p5-1) stable; urgency=low
+
+  * Corrected nbspradgis man page
+
+ -- Jose F Nieves <nieves@ltp.uprrp.edu>  Sun, 06 Sep 2015 21:10:33 -0400
+
 nbspgislibmap (1.0.1p4-1) stable; urgency=low
 
   * Added support for n{1,2,3}s
