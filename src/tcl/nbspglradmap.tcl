@@ -9,7 +9,7 @@
 # -e => override the default extent calculation
 # -m => override the default map template determination (use as is)
 # -M => same as -m but look for map in the std directories
-# -b,d,f,g,o,s,t,D => are passed to nbspglmap intact
+# -b,k,d,f,g,o,s,t,D => are passed to nbspglmap intact
 #
 # Example: nbspglradmap n0rjua_20110808_1948.nids
 #
@@ -189,6 +189,14 @@ if {$option(M) ne ""} {
     lappend cmd "-m" $option(m);
 } else {
     lappend cmd "-M" $mapname;
+}
+
+if {$option(b) == 1} {
+    lappend cmd "-b";
+}
+
+if {$option(k) == 1} {
+    lappend cmd "-k";
 }
 
 foreach k [list d D f g o s t] {
