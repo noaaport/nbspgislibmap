@@ -5,7 +5,8 @@
 # Usage:
 # nbspglsatmap [-b] [-k] [-e extent] [-m | -M maptemplate] [opts] <gini_file(s)>
 #
-# -k => keep the shapefiles created
+# -b => background mode
+# -k => keep the data files created
 # -e => override the default extent calculation
 # -m => override the default map template determination (use as is)
 # -M => same as -m but look for map in the std directories
