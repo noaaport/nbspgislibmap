@@ -209,7 +209,10 @@ if {[file dirname $g(output_img)] ne "."} {
 build_map_script $g(map_template);
 ::fileutil::writeFile $g(output_map) $map(scriptstr);
 
-exec shp2img -m $g(output_map) -o $g(output_img);
+#
+# shp2img renamed map2img since mapserver-8.0
+#
+exec map2img -m $g(output_map) -o $g(output_img);
 
 if {$option(k) == 0} {
     file delete $g(output_map);
