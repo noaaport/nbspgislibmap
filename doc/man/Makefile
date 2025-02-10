@@ -5,9 +5,9 @@
 #
 # $Id$
 #
-SOURCES = nbspglmap.man nbspglradmap.man nbspglsatmap.man
-OBJECTS = nbspglmap.1 nbspglradmap.1 nbspglsatmap.1
-TARGET = nbspglmap.1.gz nbspglradmap.1.gz nbspglsatmap.1.gz
+SOURCES = nbspglmap.man nbspglradmap.man nbspglsatmap.man nbspglgoesrmap.man
+OBJECTS = nbspglmap.1 nbspglradmap.1 nbspglsatmap.1 nbspglgoesrmap.1
+TARGET = nbspglmap.1.gz nbspglradmap.1.gz nbspglsatmap.1.gz nbspglgoesrmap.1.gz
 
 all: ${TARGET}
 
@@ -22,6 +22,10 @@ nbspglradmap.1.gz: nbspglradmap.man
 nbspglsatmap.1.gz: nbspglsatmap.man
 	cp nbspglsatmap.man nbspglsatmap.1
 	gzip -9 -c nbspglsatmap.1 > nbspglsatmap.1.gz
+
+nbspglgoesrmap.1.gz: nbspglgoesrmap.man
+	cp nbspglgoesrmap.man nbspglgoesrmap.1
+	gzip -9 -c nbspglgoesrmap.1 > nbspglgoesrmap.1.gz
 
 clean:
 	rm -f *~ ${OBJECTS} ${TARGET}

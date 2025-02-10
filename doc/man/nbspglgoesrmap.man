@@ -1,0 +1,30 @@
+.\"
+.\" $Id$
+.\"
+.\" See LICENSE
+.\"
+.TH NBSPGLMAP 1 "4 JANUARY, 2015"
+.SH NAME
+nbspglmap \- Invoke shp2img with a predefined set of auxiliary files
+.SH SYNOPSIS
+\fBnbspglmap\fR [-b] [-k] [-d outputdir] [-e extent] [-f mapfontsdir]
+[-g geodatadir] [-m | -M maptemplate] [-o outputname] [-s size] [-t imagetype]
+[-D <defs>] <inputfile_1> ... <inputfile_n>};
+.PP
+The input file(s) is a gis file (i.e., a shapefile for radar and
+asc file for sat). They can be given as arguments or in stdin.
+.PP
+The options are:
+.PP
+.RS 2
+-k => keep the map script
+.br
+.br
+-m => use the tmap template as is (do not search in std directories)
+.br
+-M => add the ".tmap" ext, and search it in the std directories
+.br
+-e => extent in the form "lon1 lat1 lon2 lat2"  (or with ; separator)
+.br
+-s => size as "width height" or "width;height"
+.RE

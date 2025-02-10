@@ -1,1 +1,2 @@
 TCLSH="/usr/local/bin/tclsh8.6"
+SHELL="/bin/sh"

@@ -29,6 +29,7 @@ PKG_DIRS = ${PKG_BINDIR} ${PKG_SHAREDIR} ${PKG_MAPSDIR} ${PKG_LEGENDSDIR} \
 	${PKG_MANDIR}
 
 SRC_TCLDIR = src/tcl
+SRC_SHDIR = src/sh
 SRC_MANDIR = doc/man
 SRC_MAPSDIR = src/maps
 SRC_LEGENDSDIR = src/legends
@@ -41,12 +42,14 @@ SRC_READMESDIR = ../doc/readmes
 BINFILES = \
 	${SRC_TCLDIR}/nbspglmap \
 	${SRC_TCLDIR}/nbspglradmap \
-	${SRC_TCLDIR}/nbspglsatmap
+	${SRC_TCLDIR}/nbspglsatmap \
+	${SRC_SHDIR}/nbspglgoesrmap
 
 MANFILES = \
 	${SRC_MANDIR}/nbspglmap.1.gz \
 	${SRC_MANDIR}/nbspglradmap.1.gz \
-	${SRC_MANDIR}/nbspglsatmap.1.gz
+	${SRC_MANDIR}/nbspglsatmap.1.gz \
+	${SRC_MANDIR}/nbspglgoesrmap.1.gz
 
 TCLLIBFILES = \
 	${SRC_TCLDIR}/radstations.tcl \
@@ -81,17 +84,19 @@ EXAMPLESFILES = \
 	${SRC_EXAMPLESDIR}/ex1-sat.sh
 
 READMESFILES = ${SRC_READMESDIR}/README \
-	${SRC_READMESDIR}/examples.README
+	${SRC_READMESDIR}/examples.README \
+	${SRC_READMESDIR}/nbspglgoesrmap.README
 
 TCLSH = %TCLSH%
+SHELL = %SHELL%
 
 all:
 	cd ${SRC_TCLDIR}; ${MAKE} TCLSH=${TCLSH}
+	cd ${SRC_SHDIR}; ${MAKE} SHELL=${SHELL}
 	cd ${SRC_MANDIR}; ${MAKE}
-	cd ${SRC_NBSPGISLIB}; ${MAKE}
+	#cd ${SRC_NBSPGISLIB}; ${MAKE}
 
 install: all
-	cd ${SRC_NBSPGISLIB}; ${MAKE} install
 	install -d ${PKG_DIRS}
 	install -m 0755 ${BINFILES} ${PKG_BINDIR}
 	install -m 0644 ${TCLLIBFILES} ${PKG_TCLLIBDIR}
@@ -100,11 +105,12 @@ install: all
 	install -m 0644 ${EXAMPLESFILES} ${PKG_EXAMPLESDIR}
 	install -m 0644 ${READMESFILES} ${PKG_READMESDIR}
 	tar -xzf ${GEODATAFILE} -C ${PKG_SHAREDIR}
+	#cd ${SRC_NBSPGISLIB}; ${MAKE} install
 
 install-man: all
 	install -d ${MANDIR}
 	install -m 0644 ${MANFILES} ${MANDIR}
-	cd ${SRC_NBSPGISLIB}; ${MAKE} install-man
+	#cd ${SRC_NBSPGISLIB}; ${MAKE} install-man
 
 tests: install
 	cp -R ${SRC_TESTSDIR} ${DESTDIR}

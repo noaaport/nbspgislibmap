@@ -1,1 +1,2 @@
 TCLSH="/usr/bin/tclsh"
+SHELL="/bin/sh"
