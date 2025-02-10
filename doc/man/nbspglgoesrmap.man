@@ -3,7 +3,7 @@
 .\"
 .\" See LICENSE
 .\"
-.TH NBSPGLGOESRMAP 10 "4 FEBRUARY, 2025"
+.TH NBSPGLGOESRMAP 1 "4 FEBRUARY, 2025"
 .SH NAME
 nbspglgoesrmap \- Create a png from a sat goesr netcdf file
 .SH SYNOPSIS
