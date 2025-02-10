@@ -18,7 +18,7 @@ stage.configure:
 
 stage.build: stage.configure 
 	dh_testdir
-	cd compile; ${MAKE}
+	cd compile; ${MAKE} PREFIX=usr
 	touch stage.build
 
 clean: stage.configure

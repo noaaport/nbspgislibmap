@@ -3,7 +3,7 @@
 #
 
 # These are for manipulation by packaging tools
-PKGBUILDDIR = pkg
+PKGBUILDDIR =
 PREFIX = usr/local
 MANPREFIX =		# or "share" when prefix=usr
 MANSUBDIR = man/man1
@@ -92,7 +92,7 @@ SHELL = %SHELL%
 
 all:
 	cd ${SRC_TCLDIR}; ${MAKE} TCLSH=${TCLSH}
-	cd ${SRC_SHDIR}; ${MAKE} SHELL=${SHELL}
+	cd ${SRC_SHDIR}; ${MAKE} SHELL=${SHELL} PKG_SHAREDIR=${PKG_SHAREDIR}
 	cd ${SRC_MANDIR}; ${MAKE}
 	#cd ${SRC_NBSPGISLIB}; ${MAKE}
 
