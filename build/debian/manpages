@@ -1,8 +1,4 @@
-compile/src/nbspgislib/compile/doc/nbspunz.1
-compile/src/nbspgislib/compile/doc/nbspradinfo.1
-compile/src/nbspgislib/compile/doc/nbspradgis.1
-compile/src/nbspgislib/compile/doc/nbspsatinfo.1
-compile/src/nbspgislib/compile/doc/nbspsatgis.1
 compile/doc/man/nbspglmap.1
 compile/doc/man/nbspglradmap.1
 compile/doc/man/nbspglsatmap.1
+compile/doc/man/nbspglgoesrmap.1

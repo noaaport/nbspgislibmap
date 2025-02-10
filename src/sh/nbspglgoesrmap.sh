@@ -191,8 +191,10 @@ make_map () {
 }
 
 # default location of data files (geodata and mapfonts)
-ggeodatadir="/usr/local/share/nbspgislib/defaults/geodata"
-gmapfontsdir="/usr/local/share/nbspgislib/defaults/mapfonts"
+_bindir=`dirname $0`
+_prefix=`dirname ${_bindir}`
+ggeodatadir="${_prefix}/share/nbspgislib/defaults/geodata"
+gmapfontsdir="${_prefix}/share/nbspgislib/defaults/mapfonts"
 
 # default name of map files
 gmapfile="goesr.map"

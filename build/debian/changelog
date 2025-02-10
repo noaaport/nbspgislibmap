@@ -1,3 +1,10 @@
+nbspgislibmap (1.1p1-1) stable; urgency=low
+
+  * Added nbspglgoesrmap and removed the infrastructure for including
+    the nbspgislib programs (removed the ext/nbspgislib package)
+
+ -- Jose F Nieves <nieves@ltp.uprrp.edu>  Mon, 10 Feb 2025 13:34:05 -0400
+
 nbspgislibmap (1.0.1p6-1) stable; urgency=low
 
   * Updated the ext/nbspgislib package
