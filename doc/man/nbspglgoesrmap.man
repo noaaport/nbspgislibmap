@@ -3,28 +3,79 @@
 .\"
 .\" See LICENSE
 .\"
-.TH NBSPGLMAP 1 "4 JANUARY, 2015"
+.TH NBSPGLGOESRMAP 10 "4 FEBRUARY, 2025"
 .SH NAME
-nbspglmap \- Invoke shp2img with a predefined set of auxiliary files
+nbspglgoesrmap \- Create a png from a sat goesr netcdf file
 .SH SYNOPSIS
-\fBnbspglmap\fR [-b] [-k] [-d outputdir] [-e extent] [-f mapfontsdir]
-[-g geodatadir] [-m | -M maptemplate] [-o outputname] [-s size] [-t imagetype]
-[-D <defs>] <inputfile_1> ... <inputfile_n>};
+\fBnbspglgoesrmap\fR [-baCDk] [-f mapfontsdir] [-g geodatadir]
+[-m user_map_template] [-o output_file] <ncfile>
 .PP
-The input file(s) is a gis file (i.e., a shapefile for radar and
-asc file for sat). They can be given as arguments or in stdin.
+This is a (shell) script with no configuration file. The input <ncfile>
+is the netcdf file (e.g., tire05_20250116_1256.goesr)
 .PP
-The options are:
+The options are as follows:
+.PP
+-b => background
+.PP
+-a => the inputfile is the asc file instead of the netcdf file
+.PP
+-C => writeout the map template and exit (can be edited and submitted with -m)
+.PP
+-D => writeout the map and exit (can be edited and submitted to map2img)
+.PP
+-f => mapfonts dir (default is /usr/local/share/nbspgislib/defaults/mapfonts)
+.PP
+-g => geodata dir (default is /usr/local/share/nbspgislib/defaults/geodata)
+.PP
+-k => keep all tmp files generated (asc, map and map template)
+.PP
+-m => specify a map template to use (it is not deleted even if -k is not set)
+.PP
+-o => output (png) file
+.PP
+In the simplest use,
 .PP
 .RS 2
--k => keep the map script
-.br
-.br
--m => use the tmap template as is (do not search in std directories)
-.br
--M => add the ".tmap" ext, and search it in the std directories
-.br
--e => extent in the form "lon1 lat1 lon2 lat2"  (or with ; separator)
-.br
--s => size as "width height" or "width;height"
+nbspgoesrmap <ncfile>  (e.g. tire05_20250116_1256.goesr)
 .RE
+.PP
+will produce the png file through the following steps:
+.PP
+1) Write out the default map template (goesr.map.in)
+.PP
+2) Determine the extent and size to be used in the "map2img" map file
+by executing
+.PP
+.RS 2
+nbspgoesr -i <ncfile>
+.RE
+.PP
+and extracting the relevant parameters from the output. If [-a]
+is given the parameters are extracted from the asc file.
+.PP
+3) Converts the map template to the map file (goesr.map)
+using "sed" to substitute the various parameters by the
+values extracted in (2), and the name of the ascfile (determined
+from the name of the input file).
+.PP
+4) Execute
+.RS 2
+nbspgoesrgis -a <ascfile> <ncfile>
+.RE
+.PP
+to create the asc file that will be used in the map2img map file.
+If [-a] is given this step is omitted.
+.PP
+5) Execute
+.RS 2
+map2img -m <mapfile> -o <outputfile>
+.RE
+.PP
+using the mapfile created in (3).
+.PP
+The options modify the default behaviour. In particular, the -C option
+can be used to write out the default map template used, which can then
+be manually edited and modified, and then submit as the map template
+to use with -m option. The [-D] writes out the map that is used with map2img
+after making the substitutions in the map template.
+

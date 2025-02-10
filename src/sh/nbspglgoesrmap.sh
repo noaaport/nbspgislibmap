@@ -28,7 +28,7 @@
 #
 # will produce the png file through the following steps:
 #
-# 1) Write out the default map template (nbspgoesr.map.in)
+# 1) Write out the default map template (goesr.map.in)
 #
 # 2) Determine the extent and size to be used in the "map2img" map file
 #    by executing
@@ -38,7 +38,7 @@
 #    and extracting the relevant parameters from the output. If [-a]
 #    is given the parameters are extracted from the asc file.
 #
-# 3) Converts the map template to the map file (nbspgoesr.map)
+# 3) Converts the map template to the map file (goesr.map)
 #    using "sed" to substitute the various parameters by the
 #    values extracted in (2), and the name of the ascfile (determined
 #    from the name of the input file).
