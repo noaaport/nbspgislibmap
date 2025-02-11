@@ -27,9 +27,8 @@
 #
 package require cmdline;
 
-# Once and for all (this implies a "standard" dir tree)
-set basedir [file join [file dirname [info script]] ".."];
-set sharedir [file join $basedir "share" "nbspgislib"];
+# Once and for all
+set sharedir %PKG_SHAREDIR%;
 
 lappend auto_path [file join $sharedir];
 package require "nbsp::radstations";

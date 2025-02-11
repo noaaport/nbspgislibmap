@@ -20,9 +20,8 @@
 package require fileutil;
 package require cmdline;
 
-# Once and for all (assumes a "standard" dir tree)
-set basedir [file join [file dirname [info script]] ".."];
-set sharedir [file join $basedir "share" "nbspgislib"];
+# Once and for all
+set sharedir %PKG_SHAREDIR%;
 set mapdir [file join $sharedir "maps"];
 
 #

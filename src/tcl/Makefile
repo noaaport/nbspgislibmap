@@ -11,14 +11,19 @@ all: ${TARGET}
 
 
 nbspglmap: nbspglmap.tcl
-	sed -e "/%TCLSH%/s||${TCLSH}|" nbspglmap.tcl > nbspglmap
+	sed -e "/%TCLSH%/s||${TCLSH}|" \
+	-e "/%PKG_SHAREDIR%/s||${PKG_SHAREDIR}|" \
+	nbspglmap.tcl > nbspglmap
 
 nbspglradmap: nbspglradmap.tcl
-	sed -e "/%TCLSH%/s||${TCLSH}|" nbspglradmap.tcl > nbspglradmap
+	sed -e "/%TCLSH%/s||${TCLSH}|" \
+	-e "/%PKG_SHAREDIR%/s||${PKG_SHAREDIR}|" \
+	nbspglradmap.tcl > nbspglradmap
 
 nbspglsatmap: nbspglsatmap.tcl
-	sed -e "/%TCLSH%/s||${TCLSH}|" nbspglsatmap.tcl > nbspglsatmap
-
+	sed -e "/%TCLSH%/s||${TCLSH}|" \
+	-e "/%PKG_SHAREDIR%/s||${PKG_SHAREDIR}|" \
+	nbspglsatmap.tcl > nbspglsatmap
 
 clean:
 	rm -f *~ ${TARGET}
