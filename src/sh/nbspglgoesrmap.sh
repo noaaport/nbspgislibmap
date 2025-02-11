@@ -6,6 +6,10 @@
 # 
 # $Id$
 #
+# [ NOTE: A version of this script is also included in the nbsp (gisfilter)
+# package under the name "nbspgoesrmap" with the only difference been
+# in the defnition of the location of the "geodata" and "mapfonts" directories.]
+#
 # Usage: nbspglgoesrmap [-baCDk] [-f mapfontsdir] [-g geodatadir]
 #                       [-m user_map_template] [-o output_file] <ncfile>
 #
