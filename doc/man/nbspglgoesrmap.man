@@ -8,7 +8,7 @@
 nbspglgoesrmap \- Create a png from a sat goesr netcdf file
 .SH SYNOPSIS
 \fBnbspglgoesrmap\fR [-baCDkr] [-f mapfontsdir] [-g geodatadir]
-[-m user_map_template] [-o output_file] <ncfile>
+[-m user_map_template] [-o output_file] [-s size] <ncfile>
 .PP
 This is a (shell) script with no configuration file. The input <ncfile>
 is the netcdf file (e.g., tire05_20250116_1256.goesr)
@@ -34,6 +34,8 @@ The options are as follows:
 -m => specify a map template to use (it is not deleted even if -k is not set)
 .PP
 -o => output (png) file
+.PP
+-s => set the max value of the greater between height and width in the map
 .PP
 In the simplest use,
 .PP
