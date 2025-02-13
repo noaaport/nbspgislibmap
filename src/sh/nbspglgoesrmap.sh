@@ -344,7 +344,7 @@ rc_sy=$rc_ny
 # the map2img default.
 #
 _sg=$rc_sy
-[ $rc_sx > $rc_sy ] && { _sg=$rc_sx; } # _sg is the karger of width and height
+[ $rc_sx -gt $rc_sy ] && { _sg=$rc_sx; } # _sg is the larger of width and height
 
 if [ ${_sg} -gt $option_s ]
 then
