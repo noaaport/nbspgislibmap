@@ -322,6 +322,7 @@ if [ $option_a -eq 0 ]
 then
     [ $option_r -eq 0 ] && nbspgoesrgis -a $rc_ascfile $ginputfile
     [ $option_r -eq 1 ] && nbspgoesrgis -r -a $rc_ascfile $ginputfile
+    [ $? -ne 0 ] && exit 1
 fi
 
 # Extract the parameters from the asc file
@@ -357,6 +358,7 @@ fi
 
 # Create the map
 make_map
+[ $? -ne 0 ] && exit 1
 
 # Exit if -D was set
 [ $option_D -eq 1 ] && { exit 0; }
